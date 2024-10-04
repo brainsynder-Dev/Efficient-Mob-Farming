@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "mob_farming:block/deathroot_dirt" }
+  }
+}
