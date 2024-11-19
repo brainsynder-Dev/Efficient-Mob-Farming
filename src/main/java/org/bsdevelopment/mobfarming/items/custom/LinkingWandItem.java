@@ -24,27 +24,19 @@ import org.bsdevelopment.mobfarming.component.LinkingRecord;
 import org.bsdevelopment.mobfarming.items.base.BaseItem;
 import org.bsdevelopment.mobfarming.utilities.ModUtilities;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Predicate;
-
 public class LinkingWandItem extends BaseItem {
-    private final Map<Predicate<BlockState>, Predicate<BlockState>> selectionPredicates = new HashMap<>();
-
     public LinkingWandItem(Properties properties) {
         super(properties);
-        selectionPredicates.put(
-                state -> state.is(ModBlocks.TRANSFER_NODE.get()),
-                state -> state.is(ModBlocks.MOB_BLENDER.get())
-        );
-        selectionPredicates.put(
-                state -> state.is(ModBlocks.TRANSFER_NODE.get()),
-                state -> state.is(ModBlocks.MOB_SPIKE.get())
-        );
-        selectionPredicates.put(
-                state -> state.is(ModBlocks.DESTINATION_PLATE.get()),
-                state -> state.is(ModBlocks.WARP_PLATE.get())
-        );
+    }
+
+    public boolean isFirstSelectionTarget (BlockState blockState) {
+        return blockState.is(ModBlocks.TRANSFER_NODE.get()) || blockState.is(ModBlocks.DESTINATION_PLATE.get());
+    }
+
+    public boolean isSecondSelectionTarget (BlockState targetState, BlockState currentState) {
+        if (currentState.is(ModBlocks.TRANSFER_NODE.get()) && targetState.is(ModBlocks.MOB_BLENDER.get())) return true;
+        if (currentState.is(ModBlocks.TRANSFER_NODE.get()) && targetState.is(ModBlocks.MOB_SPIKE.get())) return true;
+        return currentState.is(ModBlocks.DESTINATION_PLATE.get()) && targetState.is(ModBlocks.WARP_PLATE.get());
     }
 
     public static LinkingRecord getLinkingWandComponent(ItemStack stack) {
@@ -70,16 +62,6 @@ public class LinkingWandItem extends BaseItem {
     public static LinkingMode getMode(ItemStack wand) {
         LinkingRecord record = getLinkingWandComponent(wand);
         return record == null ? LinkingMode.CURRENT_POS : record.mode();
-    }
-
-    public boolean isFirstSelectionTarget (BlockState blockState) {
-        return blockState.is(ModBlocks.TRANSFER_NODE.get()) || blockState.is(ModBlocks.DESTINATION_PLATE.get());
-    }
-
-    public boolean isSecondSelectionTarget (BlockState targetState, BlockState currentState) {
-        if (currentState.is(ModBlocks.TRANSFER_NODE.get()) && targetState.is(ModBlocks.MOB_BLENDER.get())) return true;
-        if (currentState.is(ModBlocks.TRANSFER_NODE.get()) && targetState.is(ModBlocks.MOB_SPIKE.get())) return true;
-        return currentState.is(ModBlocks.DESTINATION_PLATE.get()) && targetState.is(ModBlocks.WARP_PLATE.get());
     }
 
     private void playSound(Level level, BlockPos pos, float volume, float pitch) {
