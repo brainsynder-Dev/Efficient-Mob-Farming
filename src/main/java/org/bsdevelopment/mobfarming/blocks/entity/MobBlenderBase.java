@@ -107,7 +107,10 @@ public class MobBlenderBase extends InventoryBlockEntity implements IStorage {
             ItemStack item = getItem(index);
 
             // Update the maxAttackCooldown based on how many speed upgrades are in the slot
-            if (item.is(ModItems.SPEED_UPGRADE.get())) this.maxAttackCooldown = ( this.maxBaseAttackCooldown - item.getCount() );
+            if (item.is(ModItems.SPEED_UPGRADE.get())) {
+                this.maxAttackCooldown = ( this.maxBaseAttackCooldown - item.getCount() );
+                if (this.maxAttackCooldown <= this.minAttackCooldown) this.maxAttackCooldown = this.minAttackCooldown;
+            }
         });
     }
 
