@@ -1,0 +1,49 @@
+modLoader="javafml" #mandatory
+loaderVersion="[2,)" #mandatory
+license="All Rights Reserved"
+
+issueTrackerURL="https://github.com/brainsynder-Dev/Efficient-Mob-Farming/issues"
+
+[[mods]]
+modId="mob_farming"
+version="0.1.0-dev"
+displayName="Efficient Mob Farming"
+
+# A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+
+# A URL for the "homepage" for this mod, displayed in the mod UI
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="icon.png"
+
+# A text field displayed in the mod UI
+#credits="" #optional
+authors="brainsynder"
+
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+A mob farming mod that aims to increase efficiency and reduce the strain on the server.'''
+
+# The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
+#[[mixins]]
+#config="mob_farming.mixins.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
+[[dependencies.mob_farming]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Here's another dependency
+[[dependencies.mob_farming]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1, 1.22)"
+    ordering="NONE"
+    side="BOTH"

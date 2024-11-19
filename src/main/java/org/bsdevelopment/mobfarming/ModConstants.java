@@ -1,7 +1,13 @@
 package org.bsdevelopment.mobfarming;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.level.Level;
 import net.neoforged.fml.loading.FMLPaths;
 import org.bsdevelopment.mobfarming.config.Config;
 import org.bsdevelopment.mobfarming.config.MobSpawnConfig;
@@ -13,6 +19,9 @@ public class ModConstants {
     public static final String MOD_ID = "mob_farming";
     public static final Path CONFIG_DIR = FMLPaths.CONFIGDIR.get().resolve(MOD_ID);
     public static final Path DEATHROOT_JSON_FILE = CONFIG_DIR.resolve("deathroot-mobs.json");
+    private static DamageSource SPIKE_DAMAGE;
+
+    public static final ResourceKey<DamageType> SPIKE_TYPE = ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(MOD_ID, "mob_spike"));
 
     public static final GameProfile FAKE_PROFILE = new GameProfile(Config.fakePlayerUUID, Component.translatable("mob_blender.fakeplayer").getString());
 
@@ -35,4 +44,9 @@ public class ModConstants {
     );
     public static final MobSpawner MOB_SPAWNER = new MobSpawner(DEATHROOT_SPAWN_CONFIG);
 
+    public static DamageSource getSpikeDamage(Level level) {
+        if (SPIKE_DAMAGE == null)
+            SPIKE_DAMAGE = new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ModConstants.SPIKE_TYPE));
+        return SPIKE_DAMAGE;
+    }
 }

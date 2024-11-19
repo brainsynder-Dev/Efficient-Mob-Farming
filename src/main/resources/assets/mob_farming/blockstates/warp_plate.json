@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "mob_farming:block/warp_plate"
+        },
+        "facing=east": {
+            "model": "mob_farming:block/warp_plate"
+        },
+        "facing=south": {
+            "model": "mob_farming:block/warp_plate"
+        },
+        "facing=west": {
+            "model": "mob_farming:block/warp_plate"
+        }
+    }
+}

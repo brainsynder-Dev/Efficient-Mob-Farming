@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MobSpawnConfig {
@@ -27,9 +28,9 @@ public class MobSpawnConfig {
         @SerializedName("maximum-spawn-count")
         public int maxCount;
         @SerializedName("allowed-biomes")
-        public List<String> biomes;
+        public List<String> biomes = new ArrayList<>();
         @SerializedName("allowed-dimensions")
-        public List<String> dimensions;
+        public List<String> dimensions = new ArrayList<>();
 
         public SpawnEntry(String entityType, int minCount, int maxCount, int weight) {
             this.entityType = entityType;

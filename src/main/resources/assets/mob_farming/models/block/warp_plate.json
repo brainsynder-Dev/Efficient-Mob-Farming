@@ -1,0 +1,6 @@
+{
+	"parent": "mob_farming:block/base_plate",
+	"textures": {
+		"overlay": "mob_farming:block/destination_plate_overlay"
+	}
+}

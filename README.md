@@ -1,4 +1,41 @@
 
+## What is Efficient Mob Farming?
+
+Efficient Mob Farming is a Minecraft mod that aims to increase efficiency and reduce the strain on the server by providing a more efficient way to farm mobs.  
+The mod is designed to be easy to use and accessible to players of all skill levels, providing a fun and engaging experience for those who enjoy farming.
+
+# FAQ
+
+### Q: Why Efficient Mob Farming?
+
+A: Efficient Mob Farming was created to fix an issue with some of the existing mob farming mods.
+The issue at hand was items being dropped from the farming blocks, which was not optimal for the server. (especially in large farms)
+
+### Q: How is Efficient Mob Farming different from other mob farming mods?
+
+A: Efficient Mob Farming was designed to not drop items from the farming blocks, which is a core feature of the mod.
+Other mods used by majority of modpacks do not handle item drops from farming blocks, which can lead to a lot of server lag when dealing with large farms.
+
+Our mod is designed to store the items in a bulk storage, and then transfer them to a targeted destination container wireless and efficiently.
+
+### Q: What was the inspiration behind Efficient Mob Farming?
+
+A: Simple... I was tired of crashing modpack servers due to the amount of items being dropped from other farming mods.
+
+
+## Credits
+
+- Author: BSDev
+
+Mod Todo List
+=======
+
+- [ ] Add FE powered version of the Mob Blender
+- [ ] Add upgrades to the Mob Blender (FE tier)
+- [ ] Add GUI for the Mob Blender
+- [ ] Add an alternate mob farming block that will not count as a player kill
+- [ ] Added Jade support
+
 Installation information
 =======
 

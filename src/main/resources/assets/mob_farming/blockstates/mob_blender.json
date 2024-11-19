@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "powered=false": {
+            "model": "mob_farming:block/mob_blender"
+        },
+        "powered=true": {
+            "model": "mob_farming:block/mob_blender"
+        }
+    }
+}
