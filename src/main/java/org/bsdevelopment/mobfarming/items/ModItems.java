@@ -13,7 +13,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.bsdevelopment.mobfarming.ModConstants;
 import org.bsdevelopment.mobfarming.blocks.ModBlocks;
-import org.bsdevelopment.mobfarming.config.Config;
 import org.bsdevelopment.mobfarming.items.base.UpgradeItem;
 import org.bsdevelopment.mobfarming.items.custom.LinkingWandItem;
 
@@ -28,10 +27,10 @@ public class ModItems {
 
     public static DeferredItem<Item> SWORD_CORE = ITEMS.register("sword_core", () -> new Item(new Item.Properties()));
     public static DeferredItem<Item> WARP_CORE = ITEMS.register("warp_core", () -> new Item(new Item.Properties()));
-    public static DeferredItem<Item> CREATIVE_SWORD_UPGRADE = ITEMS.register("creative_sword_upgrade", () -> new UpgradeItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
-    public static DeferredItem<Item> SWORD_UPGRADE = ITEMS.register("sword_upgrade", () -> new UpgradeItem(new Item.Properties().stacksTo(1)));
-    public static DeferredItem<Item> SPEED_UPGRADE = ITEMS.register("speed_upgrade", () -> new UpgradeItem(new Item.Properties().stacksTo(10)));
-    public static DeferredItem<Item> LOOTING_UPGRADE = ITEMS.register("looting_upgrade", () -> new UpgradeItem(new Item.Properties().stacksTo(Config.maxLootingUpgrade)));
+    public static DeferredItem<Item> CREATIVE_SWORD_UPGRADE = ITEMS.register("creative_sword_upgrade", () -> new UpgradeItem(new Item.Properties().rarity(Rarity.EPIC)));
+    public static DeferredItem<Item> SWORD_UPGRADE = ITEMS.register("sword_upgrade", () -> new UpgradeItem(new Item.Properties()));
+    public static DeferredItem<Item> SPEED_UPGRADE = ITEMS.register("speed_upgrade", () -> new UpgradeItem(new Item.Properties()));
+    public static DeferredItem<Item> LOOTING_UPGRADE = ITEMS.register("looting_upgrade", () -> new UpgradeItem(new Item.Properties()));
 
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MOD_CREATIVE_TAB = CREATIVE_MODE_TABS.register(ModConstants.MOD_ID,
@@ -58,11 +57,6 @@ public class ModItems {
                         output.accept(SPEED_UPGRADE.get());
                         output.accept(LOOTING_UPGRADE.get());
                         output.accept(CREATIVE_SWORD_UPGRADE.get());
-
-                        ITEMS.getEntries().forEach(item -> {
-                            if (item.getId().getPath().contains("blender_blade")) return;
-                            output.accept(item.get());
-                        });
                     }).build());
 
 
