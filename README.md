@@ -30,11 +30,11 @@ A: Simple... I was tired of crashing modpack servers due to the amount of items 
 Mod Todo List
 =======
 
-- [ ] Add FE powered version of the Mob Blender
-- [ ] Add upgrades to the Mob Blender (FE tier)
-- [ ] Add GUI for the Mob Blender
-- [ ] Add an alternate mob farming block that will not count as a player kill
-- [ ] Added Jade support
+- [x] Add GUI for the Mob Blender
+- [ ] Finish the GUI for the Mob Blender (currently there is no way to remove the experience from it)
+- [x] Add an alternate mob farming block that will not count as a player kill (Mob Spike, based on the Pointed Dripstone)
+- [x] Added Jade support
+- [ ] Make Mob Blender better performance wise, currently using Observable set to 30 seconds it uses 10 μs/t at idle
 
 Installation information
 =======
