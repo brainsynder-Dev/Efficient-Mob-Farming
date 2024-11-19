@@ -25,3 +25,4 @@ run-data
 
 repo
 /src/main/resources/assets/mob_farming/textures/key/
+/src/generated/resources/.cache/
