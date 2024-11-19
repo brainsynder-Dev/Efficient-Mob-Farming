@@ -14,6 +14,7 @@ import org.bsdevelopment.mobfarming.blocks.entity.MobBlenderBase;
 import org.bsdevelopment.mobfarming.client.screen.widgets.Widgets;
 import org.bsdevelopment.mobfarming.config.Config;
 import org.bsdevelopment.mobfarming.container.base.BaseInventoryContainer;
+import org.bsdevelopment.mobfarming.items.ModItems;
 import org.bsdevelopment.mobfarming.items.base.UpgradeItem;
 
 public class MobBlenderContainer extends BaseInventoryContainer<MobBlenderBase> {
@@ -39,13 +40,11 @@ public class MobBlenderContainer extends BaseInventoryContainer<MobBlenderBase> 
                 }
 
                 @Override
-                public int getMaxStackSize() {
-                    return Config.maxLootingUpgrade;
-                }
-
-                @Override
                 public int getMaxStackSize(ItemStack stack) {
-                    return Config.maxLootingUpgrade;
+                    if (stack.is(ModItems.LOOTING_UPGRADE.get())) return Config.maxLootingUpgrade;
+                    if (stack.is(ModItems.SPEED_UPGRADE.get())) return 10;
+                    if (stack.is(ModItems.SWORD_UPGRADE.get()) || stack.is(ModItems.CREATIVE_SWORD_UPGRADE.get())) return 1;
+                    return super.getMaxStackSize(stack);
                 }
 
                 @Override
