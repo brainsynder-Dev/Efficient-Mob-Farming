@@ -18,6 +18,7 @@ import org.bsdevelopment.mobfarming.blocks.entity.MobBlenderBase;
 import org.bsdevelopment.mobfarming.utilities.fakeplayer.CustomFakePlayer;
 
 public class BlenderDeathListener {
+    private final String BLENDER_POSITION_KEY = ModConstants.MOD_ID+".killed_by_blender";
 
     @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void onEntityDamage(LivingDamageEvent.Pre event) {
@@ -26,7 +27,7 @@ public class BlenderDeathListener {
 
         // Was killed by the mob blender
         if ((killer instanceof CustomFakePlayer fakePlayer) && fakePlayer.getPersistentData().contains(ModConstants.MOD_ID)) {
-            event.getEntity().getPersistentData().put(ModConstants.MOD_ID+".killed_by_blender", BlockPos.CODEC.encodeStart(NbtOps.INSTANCE, fakePlayer.blockPosition()).getOrThrow());
+            event.getEntity().getPersistentData().put(BLENDER_POSITION_KEY, BlockPos.CODEC.encodeStart(NbtOps.INSTANCE, fakePlayer.blockPosition()).getOrThrow());
         }
     }
 
@@ -40,8 +41,8 @@ public class BlenderDeathListener {
         }
 
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(ModConstants.MOD_ID+".killed_by_blender")) {
-            BlockPos blenderPos = BlockPos.CODEC.decode(NbtOps.INSTANCE, entity.getPersistentData().get(ModConstants.MOD_ID+".killed_by_blender")).getOrThrow().getFirst();
+        if (entity.getPersistentData().contains(BLENDER_POSITION_KEY)) {
+            BlockPos blenderPos = BlockPos.CODEC.decode(NbtOps.INSTANCE, entity.getPersistentData().get(BLENDER_POSITION_KEY)).getOrThrow().getFirst();
             handleItemDrop(event, event.getEntity().level(), blenderPos);
         }
     }
@@ -81,8 +82,8 @@ public class BlenderDeathListener {
         }
 
         LivingEntity entity = event.getEntity();
-        if (entity.getPersistentData().contains(ModConstants.MOD_ID+".killed_by_blender")) {
-            BlockPos blenderPos = BlockPos.CODEC.decode(NbtOps.INSTANCE, entity.getPersistentData().get(ModConstants.MOD_ID+".killed_by_blender")).getOrThrow().getFirst();
+        if (entity.getPersistentData().contains(BLENDER_POSITION_KEY)) {
+            BlockPos blenderPos = BlockPos.CODEC.decode(NbtOps.INSTANCE, entity.getPersistentData().get(BLENDER_POSITION_KEY)).getOrThrow().getFirst();
             handleExperienceDrop(event, event.getEntity().level(), blenderPos);
         }
     }
