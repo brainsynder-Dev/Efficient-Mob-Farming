@@ -54,10 +54,12 @@ public class MobSpawnConfig {
         }
 
         public boolean isBiomeValid(String biome) {
+            if (biomes.isEmpty()) return true;
             return biomes.contains("ANY") || biomes.contains(biome);
         }
 
         public boolean isDimensionValid(String dimension) {
+            if (dimensions.isEmpty()) return true;
             return dimensions.contains("ANY") || dimensions.contains(dimension);
         }
     }
