@@ -19,5 +19,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Gradle
-        uses: gradle/actions/setup-gradle@v4
-        run: ./gradlew build
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          arguments: build
