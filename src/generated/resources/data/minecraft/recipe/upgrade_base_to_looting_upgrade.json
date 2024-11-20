@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:lapis_block"
+  },
+  "base": {
+    "item": "mob_farming:upgrade_base"
+  },
+  "result": {
+    "count": 1,
+    "id": "mob_farming:looting_upgrade"
+  },
+  "template": []
+}

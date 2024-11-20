@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mob_farming",
+  "key": {
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "mob_farming:warp_core"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " A ",
+    " BA",
+    "C  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mob_farming:linking_wand"
+  }
+}

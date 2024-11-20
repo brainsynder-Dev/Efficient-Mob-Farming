@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mob_farming",
+  "key": {
+    "A": {
+      "item": "minecraft:wither_rose"
+    },
+    "B": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mob_farming:deathroot_dirt"
+  }
+}

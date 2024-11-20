@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "mob_farming:sword_core"
+  },
+  "base": {
+    "item": "mob_farming:upgrade_base"
+  },
+  "result": {
+    "count": 1,
+    "id": "mob_farming:sword_upgrade"
+  },
+  "template": []
+}

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mob_farming:mob_spike"
+        "recipe": "mob_farming:sword_core"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mob_farming:mob_spike"
+      "mob_farming:sword_core"
     ]
   }
 }

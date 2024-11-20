@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mob_farming",
+  "key": {
+    "A": {
+      "item": "minecraft:polished_blackstone_pressure_plate"
+    },
+    "B": {
+      "item": "minecraft:ender_eye"
+    },
+    "C": {
+      "item": "minecraft:polished_blackstone"
+    }
+  },
+  "pattern": [
+    "   ",
+    "ABA",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mob_farming:destination_plate"
+  }
+}

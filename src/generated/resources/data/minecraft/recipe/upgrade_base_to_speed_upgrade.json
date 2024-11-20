@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:sugar"
+  },
+  "base": {
+    "item": "mob_farming:upgrade_base"
+  },
+  "result": {
+    "count": 1,
+    "id": "mob_farming:speed_upgrade"
+  },
+  "template": []
+}

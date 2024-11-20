@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mob_farming",
+  "key": {
+    "A": {
+      "item": "minecraft:wooden_sword"
+    },
+    "B": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:golden_sword"
+    },
+    "D": {
+      "item": "minecraft:stone_sword"
+    },
+    "E": {
+      "item": "minecraft:iron_block"
+    },
+    "F": {
+      "item": "minecraft:diamond_sword"
+    },
+    "G": {
+      "item": "minecraft:iron_sword"
+    },
+    "H": {
+      "item": "minecraft:netherite_sword"
+    }
+  },
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GBH"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mob_farming:sword_core"
+  }
+}
