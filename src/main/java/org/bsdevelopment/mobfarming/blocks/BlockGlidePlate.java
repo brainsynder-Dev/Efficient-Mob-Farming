@@ -19,7 +19,6 @@ public class BlockGlidePlate extends BlockBasePlate {
         if (entity.isCrouching()) return;
         if (entity.getY() <= (double) pos.getY() + 0.4d) {
             double velocity = Config.glidePlateVelocity;
-            System.out.println("GlidePlate Velocity: " + velocity);
 
             Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
             double deltaX = (velocity * (direction.getStepX() * 1.5));
