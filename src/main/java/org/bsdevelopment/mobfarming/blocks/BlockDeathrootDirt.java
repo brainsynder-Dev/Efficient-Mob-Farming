@@ -7,8 +7,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -46,7 +47,7 @@ public class BlockDeathrootDirt extends Block {
         if (!checkMobSpawning(level, pos)) return;
 
         AABB areaToCheck = new AABB(pos).inflate(5, 2, 5);
-        int entityCount = level.getEntitiesOfClass(Mob.class, areaToCheck, entity -> entity instanceof Enemy).size();
+        int entityCount = level.getEntitiesOfClass(LivingEntity.class, areaToCheck, entity -> ((entity instanceof Enemy) && (!(entity instanceof Player)))).size();
 
         if (entityCount > 8) return;
 
