@@ -56,6 +56,7 @@ public class ModItems {
                         output.accept(ModBlocks.WARP_PLATE.getItem());
                         output.accept(ModBlocks.DESTINATION_PLATE.getItem());
 
+                        output.accept(WARP_CORE.get());
                         output.accept(SWORD_CORE.get());
                         output.accept(UPGRADE_BASE.get());
                         output.accept(SWORD_UPGRADE.get());
