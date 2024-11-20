@@ -126,6 +126,7 @@ public class LinkingWandItem extends BaseItem {
                         linkable.linkPosition(storedBlockPos);
                         playSound(level, pos, 0.5F, 1.2F);
                         player.displayClientMessage(Component.literal("Blocks linked! Data saved to source block."), true);
+                        return InteractionResult.SUCCESS;
                     } else {
                         player.displayClientMessage(Component.literal("Source block cannot be linked."), true);
                         record.setStoredPos(null);

@@ -29,7 +29,6 @@ public class MobSpawner {
 
         MobSpawnConfig.SpawnEntry selectedEntry = randomSelector.selectRandomEntry(validEntries);
         if (selectedEntry == null) return;
-        System.out.println("Selected entry: "+ selectedEntry);
 
         int spawnCount = randomSelector.getRandomSpawnCount(selectedEntry);
         spawnEntities(selectedEntry, level, pos, spawnCount);
@@ -62,13 +61,17 @@ public class MobSpawner {
             // set the mob's position, and add some randomness to it
             double xOffset = pos.getX() + 0.5 + (Math.random() - 0.5);
             double zOffset = pos.getZ() + 0.5 + (Math.random() - 0.5);
-            entity.setPos(xOffset, pos.getY() + 1D, zOffset);
+            entity.setPos(xOffset, pos.getY() + 0.5D, zOffset);
 
             // check if the mob can spawn at the current position
             if (!EventHooks.checkSpawnPosition(entity, (ServerLevelAccessor) level, MobSpawnType.NATURAL))
                 return;
+
             // checks if the mobs bounding box collides with nearby blocks
-            if (!level.noCollision(entity.getBoundingBox())) return;
+
+            // TODO: For some reason this is causing issues with the mob spawning
+            // We will need to find a way to fix this so mobs cant escape out of farms when spawning
+            // if (!level.noCollision(entity.getBoundingBox())) return;
 
             // checks if there are any entities of the same type in the current area
             if (!level.getEntities(entity.getType(), entity.getBoundingBox(), EntitySelector.ENTITY_STILL_ALIVE).isEmpty())
