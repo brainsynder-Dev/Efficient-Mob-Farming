@@ -21,6 +21,7 @@ public class ModItemModelData extends ItemModelProvider {
     protected void registerModels() {
         simpleGenerated(ModItems.SWORD_CORE.get());
         simpleGenerated(ModItems.SPEED_UPGRADE.get());
+        simpleGenerated(ModItems.UPGRADE_BASE.get());
         simpleGenerated(ModItems.SWORD_UPGRADE.get());
         simpleGenerated(ModItems.LOOTING_UPGRADE.get());
         simpleGenerated(ModItems.CREATIVE_SWORD_UPGRADE.get());

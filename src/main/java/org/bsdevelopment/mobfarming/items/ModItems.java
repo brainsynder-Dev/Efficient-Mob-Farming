@@ -25,8 +25,12 @@ public class ModItems {
 
     public static DeferredItem<Item> LINKING_WAND = ITEMS.register("linking_wand", () -> new LinkingWandItem(new Item.Properties().stacksTo(1)));
 
+    // Items used for crafting
     public static DeferredItem<Item> SWORD_CORE = ITEMS.register("sword_core", () -> new Item(new Item.Properties()));
     public static DeferredItem<Item> WARP_CORE = ITEMS.register("warp_core", () -> new Item(new Item.Properties()));
+
+    // Upgrades
+    public static DeferredItem<Item> UPGRADE_BASE = ITEMS.register("upgrade_base", () -> new Item(new Item.Properties()));
     public static DeferredItem<Item> CREATIVE_SWORD_UPGRADE = ITEMS.register("creative_sword_upgrade", () -> new UpgradeItem(new Item.Properties().rarity(Rarity.EPIC)));
     public static DeferredItem<Item> SWORD_UPGRADE = ITEMS.register("sword_upgrade", () -> new UpgradeItem(new Item.Properties()));
     public static DeferredItem<Item> SPEED_UPGRADE = ITEMS.register("speed_upgrade", () -> new UpgradeItem(new Item.Properties()));
@@ -53,6 +57,7 @@ public class ModItems {
                         output.accept(ModBlocks.DESTINATION_PLATE.getItem());
 
                         output.accept(SWORD_CORE.get());
+                        output.accept(UPGRADE_BASE.get());
                         output.accept(SWORD_UPGRADE.get());
                         output.accept(SPEED_UPGRADE.get());
                         output.accept(LOOTING_UPGRADE.get());

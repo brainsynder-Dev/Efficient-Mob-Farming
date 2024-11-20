@@ -21,6 +21,7 @@ public class ModLanguageProvider extends net.neoforged.neoforge.common.data.Lang
                 new Translation("description", "Swords will be unbreakable while equipped")
         );
 
+        add(ModItems.UPGRADE_BASE.get(), "Upgrade Base");
         add(ModItems.LOOTING_UPGRADE.get(), "Looting Upgrade",
                 new Translation("description", "Adds an additional looting level")
         );
