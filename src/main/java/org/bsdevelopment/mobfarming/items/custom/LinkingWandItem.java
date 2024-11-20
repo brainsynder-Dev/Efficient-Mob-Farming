@@ -163,7 +163,7 @@ public class LinkingWandItem extends BaseItem {
         if (player.isShiftKeyDown()) {
             // Toggle the mode
             LinkingRecord record = getLinkingWandComponent(wand);
-            record.setStoredPos(null);
+            if (record != null) record.setStoredPos(null);
             player.displayClientMessage(Component.literal("Linking Wand selection cleared."), true);
             return InteractionResultHolder.success(wand);
         }
